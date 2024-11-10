@@ -1,0 +1,11 @@
+# Terraform binaries
+.terraform/
+
+# Top secret
+.secret/
+
+# Terraform state and version files
+terraform.*
+terraform.tfstate.*
+.terraform.*
+
