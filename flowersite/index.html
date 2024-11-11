@@ -26,9 +26,6 @@ This is example code for using Cat-Dog model in broser with tensorflow.js enviro
 -----------------------
 
 -->
-
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,26 +33,37 @@ This is example code for using Cat-Dog model in broser with tensorflow.js enviro
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Document</title>
+        <title>Flower Model Prediction</title>
     </head>
 
     <body>
-        
-        <h2> Testing Flower model</h2>
-        With this code we run flower model in browser using tensorflow.js environment.
+        <h2>Testing Flower Model</h2>
+        <p>This model predicts different types of flowers in the browser using TensorFlow.js.</p>  
         <br>
-        <br>
-        <h3> Test image </h3>
+
+        <h3>Test Image</h3>
         <input type='file' id="image_input" accept="image/png, image/jpeg, image/jpg" onchange='openFile(event)'><br>
-        <br>
-        <img id='output' style=width:300px;"> 
-        <script src="./script.js"></script>
-        <br>
-        <h3> Verdict: </h3>
+        <img id='output' style="width:300px;">
+
+        <br><br>
+        
+        <h3>Verdict:</h3>
         <p id="result_text">tbd</p>
         <p id="prediction_text">tbd</p>
-        
-        
+
+        <!-- Flower Class Information in English and Finnish -->
+        <h3>Flower Categories</h3>
+        <p><b>English:</b> The model is trained to recognize the following types of flowers:</p>
+        <ul>
+            <li>Dandelion (Voikukka)</li>
+            <li>Daisy (Päivänkakkara)</li>
+            <li>Tulip (Tulppaani)</li>
+            <li>Sunflower (Auringonkukka)</li>
+            <li>Rose (Ruusu)</li>
+        </ul>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>
 

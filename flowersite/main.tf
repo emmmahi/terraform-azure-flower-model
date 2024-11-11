@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "rg" {
 
 # strorage account määritys, nimi tulee muuttujien kautta
 # huomaa viittauksen vaadituun ylempään resurssiin 
-resource "azurerm_storage_account" "lesson_01" {
+resource "azurerm_storage_account" "flowersite" {
   name                     = "${var.product}${var.suffix}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
@@ -21,7 +21,7 @@ resource "azurerm_storage_account" "lesson_01" {
 # luodaan blob storage kontti? joka tulee automaattisesti kun static website on ylemmässä käytössä
 resource "azurerm_storage_blob" "index_html" {
   name                   = "index.html"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "text/html"
@@ -30,7 +30,7 @@ resource "azurerm_storage_blob" "index_html" {
 
 resource "azurerm_storage_blob" "style_css" {
   name                   = "style.css"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "text/css"
@@ -39,7 +39,7 @@ resource "azurerm_storage_blob" "style_css" {
 
 resource "azurerm_storage_blob" "script_js" {
   name                   = "script.js"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "application/javascript"
@@ -49,7 +49,7 @@ resource "azurerm_storage_blob" "script_js" {
 # model.json -tiedoston kopiointi Blob Storageen
 resource "azurerm_storage_blob" "model_json" {
   name                   = "flower_tfjs_5/model.json"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "application/json"
@@ -59,7 +59,7 @@ resource "azurerm_storage_blob" "model_json" {
 # Ensimmäisen bin-tiedoston kopiointi Blob Storageen
 resource "azurerm_storage_blob" "group1_shard1of3" {
   name                   = "flower_tfjs_5/group1-shard1of3.bin"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "application/octet-stream"
@@ -69,7 +69,7 @@ resource "azurerm_storage_blob" "group1_shard1of3" {
 # Toisen bin-tiedoston kopiointi Blob Storageen
 resource "azurerm_storage_blob" "group1_shard2of3" {
   name                   = "flower_tfjs_5/group1-shard2of3.bin"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "application/octet-stream"
@@ -79,7 +79,7 @@ resource "azurerm_storage_blob" "group1_shard2of3" {
 # Kolmannen bin-tiedoston kopiointi Blob Storageen
 resource "azurerm_storage_blob" "group1_shard3of3" {
   name                   = "flower_tfjs_5/group1-shard3of3.bin"
-  storage_account_name   = azurerm_storage_account.lesson_01.name
+  storage_account_name   = azurerm_storage_account.flowersite.name
   storage_container_name = "$web"
   type                   = "Block"
   content_type           = "application/octet-stream"

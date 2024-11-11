@@ -16,6 +16,6 @@ variable "suffix" {
 }
 
 variable "product" {
-    default = "lesson01"
+    default = "flowersite"
     description = "The product name. Lesson 1 is our hyper complex product."
 }
